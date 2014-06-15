@@ -36,3 +36,23 @@ vagrant plugin install sahara
 ```
 vagrant plugin list
 ```
+
+saharaの使い方
+```
+# サンドボックスモードの開始
+vagrant sandbox on [VM名]
+
+# サンドボックスモードの終了(≒コミット)
+vagrant sandbox off [VM名]
+
+# 変更をコミット
+vagrant sandbox commit [VM名]
+
+# 変更をロールバック
+vagrant sandbox rollback [VM名]
+```
+
+[VM名]を指定しないとすべてのVMに対して、操作を行う(っぽい)
+
+「"sandbox off"するとコミットしていない内容は削除される」という説明は嘘。
+正しくは、「"sandbox onした時のスナップショット"が削除され、コミットしていない内容はそのまま残る」
