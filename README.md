@@ -11,6 +11,22 @@ LANGをja_JP.UTF-8に書き換える
               line='LANG=\"ja_JP.UTF-8\"'
 ```
 
+接続先ホストを初期化した時、
+```
+FAILED: Host key for server [ホスト名] does not match!
+```
+と怒られた時の対処
+
+```
+# ホストキーの確認
+ssh-keygen -F [ホスト名]
+
+# ホストキーの削除
+ssh-keygen -R [ホスト名]
+
+# 削除されたことの確認
+ssh-keygen -F [ホスト名]
+```
 
 VagrantMemo
 ===========
